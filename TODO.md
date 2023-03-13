@@ -3,7 +3,7 @@
 - [ ] Description (Brock)
 - [ ] Functional Requirements (Brock)
 - [ ] Use Case Descriptions (Esteban + Jaidyn)
-    - (Jaidyn)
+    (Jaidyn)
     - [ ] User must be able to log in
     - [ ] User must be able to log out
     - [ ] User must be able to make an account
@@ -12,7 +12,8 @@
     - [ ] User must be able to make a server
     - [ ] User must be able to delete servers they are owners of
     - [ ] User must be able to assign roles to themselves and other users on servers they are administrators on
-    - [ ] (Esteban) User must be able to join a server
+    (Esteban) 
+    - [ ] User must be able to join a server
     - [ ] User must be able to leave a server
     - [ ] User must be able to change their profile including:
       - Changing PFP
