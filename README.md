@@ -6,6 +6,10 @@ Github Repo created and Canvas quiz pertaining to group members fully submitted
 
 ## Milestone 2
 
+### Description
+
+Our project, Homebase, is designed to be a minimalistic clone of Discord, the popular chat and voice communication service. Within our service, users will be able to make accounts, and edit their accounts to have a personalized name, profile picture, and bio. The user will also then be able to join a server off of a unique invite code being given to them, unique to an individual server. If the user does not wish to join another server, they also have the opportunity to make their own in which they will be owner and administrator on. Within servers, users will be able to view text channels within the server, the sent messages within those text channels, and the member list of the server showing which users are online/offline. If a user is an administrator for a server they also have the opportunity to perform CRUD (create, read, update delete) operations for new and existing text channels, and create/assign roles to individual users If they are the owner, they can delete the server in its entirety also. Within a channel, a user can post a message which can include both plain text, images which will be auto embedded, and hyperlinks to other websites. While idlely browsing servers, a user will be able to see messages as they come in real time. When a user is done using the software, they will be able to log out, or potentially delete their account if they no longer want to use the service. A user can return by signing in again, and if they cannot remember their password that they used before, can request to have it reset.
+
 
 
 # The Project
