@@ -76,8 +76,116 @@ By the end of this project, students will be able to:
 
 **Discord Clone:** This project involves the development of a web-based platform for online communication and collaboration, similar to the popular chat app, Discord. The platform should incorporate the Observer design pattern to notify users of new messages, and the Mediator design pattern to manage communication between users and channels. The platform should also implement the Singleton design pattern to ensure that only one instance of the chat server is running at any given time, and the Command design pattern to enable users to execute commands (e.g. change username, join channel). Additionally, the platform should incorporate Continuous Integration and Deployment (CI/CD) and automated testing to ensure that updates are deployed quickly and without errors.
 
-**iClicker Clone:** This project involves the development of a web-based platform for classroom polling and feedback. The platform should allow instructors to pose questions to students and receive instant feedback. The platform should incorporate the Observer design pattern to notify the instructor of student responses, and the Facade design pattern to simplify the interface between the user and the underlying system.  Additionally, the system should incorporate Continuous Integration and Deployment (CI/CD) and automated testing and deploy quickly and without errors. 
+**iClicker Clone:** This project involves the development of a web-based platform for classroom polling and feedback. The platform should allow instructors to pose questions to students and receive instant feedback. The platform should incorporate the Observer design pattern to notify the instructor of student responses, and the Facade design pattern to simplify the interface between the user and the underlying system.  Additionally, the system should incorporate Continuous Integration and Deployment (CI/CD) and automated testing and deploy quickly and without errors.
 
 **Online Marketplace Application:** This project involves the development of a web-based application that facilitates online transactions between buyers and sellers. The application should incorporate the MVC (Model-View-Controller) design pattern to separate the concerns of the application into different components. The application should also implement the Observer design pattern to notify users of updates to their transactions.  Additionally, the system should incorporate Continuous Integration and Deployment (CI/CD) and automated testing.
 
 **IoT Sensor Monitoring System:** This project involves the development of a system for monitoring and analyzing data from IoT sensors using MQTT. The system should incorporate the Publish-Subscribe design pattern to enable sensors to publish data and clients to subscribe to relevant data streams. The system should also implement the Chain of Responsibility design pattern to manage and filter data streams, and the Adapter design pattern to enable different types of sensors to communicate with the system. Additionally, the system should incorporate Continuous Integration and Deployment (CI/CD) and automated testing to ensure that data is collected accurately and without errors. The system should provide real-time visualizations of sensor data and alert users when thresholds are exceeded.
+
+## Use Cases
+
+Use Case 9: Join Server
+Primary actor: User
+Description: Allows a user to join a server.
+Pre-condition: User is logged in.
+Post-condition: User has server listed on their server list and receives notifications.
+
+Main scenario:
+    1. User selects server from list.
+    2. User joins server.
+    3. Server updated to reflect the new membership of user on the server.
+    4. User is able to send and receive messages, and view members of server.
+Extensions:
+    1.1: Server is unavailable. Error is shown. Prompt to try again.
+
+Use Case 10: Leave Server
+Primary actor: User
+Description: User leaves a server they are a member of.
+Pre-condition: User belongs to the server.
+Post-condition: User is no longer in the server.
+
+Main scenario:
+    1. User selects to leave the server as part of the server options.
+    2. The server is updated to not include user as a member.
+    3. The user no longer has access to the server.
+Extensions:
+    1.1: User is the owner of a server.
+        1.1.1: Error is shown. User is asked to pass ownership of server via roles.
+
+Use Case 11: Change profile information.
+Primary actor: User
+Description: User changes name, profile picture, and other profile info.
+Pre-condition: User is logged into profile.
+Post-condition: User information is updated on the database.
+
+Main scenario:
+    1. User clicks on their profile icon.
+    2. User is taken to their profile editing page.
+    3. User changes information, and confirms changes via button.
+    4. Database is updated with new information.
+Extensions:
+    4.1: Database is inaccessible or information is not updated. Error is shown and changes are rolled back to last.
+
+Use Case 12: Change text channels in server.
+Primary actor: User
+Description: User is able to change a text channel within the same server and send messages in the new one.
+Pre-condition: User is a member of the server and the server has multiple text channels.
+Post-condition: User is directed to the new text channel.
+
+Main scenario:
+    1. User is in a server's text channel and selects a different text channel in another server.
+    2. User is switched to new text channel.
+    3. User is able to send messages in text channels.
+
+Use Case 13: CRUD operations on owned server.
+Primary actor: User
+Description: User is able to create text channels in servers that they own. They are able to change server names, update server information, and delete servers they own.
+Pre-condition: User is owner of a server.
+Post-condition: User updates server information on the database.
+
+Main scenario:
+    1. User accesses control panel for server they own.
+    2. User chooses one of the CRUD operations.
+    3. Database is updated with new information.
+    4. Changes are reflected in webapp
+Extensions:
+    2.1: User is prompted to confirm destructive actions (deleting servers).
+    3.1: Database is inaccessible. Error is shown and user is prompted to try again.
+
+Use Case 14: Send message in text channel.
+Primary actor: User
+Description: User sends a message/image in a text channel and members are notified.
+Pre-condition: User is member of a server and is in a text channel.
+Post-condition: None
+
+Main scenario:
+    1. User is in a server text channel types a message/enters an image.
+    2. User confirms sending.
+    3. Other members of the server are notified.
+Extensions:
+    1.1: Internet connection is lost while sending message. Notify user and prompt to send again.
+
+Use Case 15: Receive incoming messages.
+Primary actor: User
+Description: User is notified of incoming messages.
+Pre-condition: User is member of server where message is sent.
+Post-condition: None
+
+Main scenario:
+    1. Another user has sent a message in the server.
+    2. Member user receives notification of the new message.
+Extensions:
+    2.1: User has turned off notifications. User does not receive a notification.
+
+Use Case 16: View existing members.
+Primary actor: User
+Description: Users in a server can see the list of members of a server.
+Pre-condition: User is member of a server.
+Post-condition: None
+
+Main scenario:
+    1. User is a member of a server and clicks on the server information button.
+    2. User is shown list of all members and their roles.
+Extensions:
+    2.1: If no role is set for members, no information about them is displayed.
+  
