@@ -239,6 +239,7 @@ Main scenario:
 	4. User is able to send and receive messages, and view members of server.
 
 Extensions:
+
     1.1: Server is unavailable. Error is shown. Prompt to try again.
 
 
