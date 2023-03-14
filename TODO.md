@@ -12,7 +12,11 @@
     - [ ] User must be able to make a server
     - [ ] User must be able to delete servers they are owners of
     - [ ] User must be able to assign roles to themselves and other users on servers they are administrators on
+<<<<<<< HEAD
   - [ ] (Esteban)
+=======
+    - (Esteban) 
+>>>>>>> f1c4cbf63ccbd3a841a6bec9eedd05fe819ba242
     - [ ] User must be able to join a server
     - [ ] User must be able to leave a server
     - [ ] User must be able to change their profile including:

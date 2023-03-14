@@ -24,10 +24,6 @@ Milestone 2:
 		-User must receive incoming messages as they are posted
 		-User must be able to view members of server
 		
-		-A server must include the most recent messages and the member list, along with an options button for admins
-			-A member list must include all users and their PFP, along with their status (online, offline)
-		-A message must include a poster, with their PFP and Name, along with a date posted at
-		
 		
 	Potential Technology Needed:
 		-Authentication for users (log in system with password salting/hashing, Passport.js for Node)
