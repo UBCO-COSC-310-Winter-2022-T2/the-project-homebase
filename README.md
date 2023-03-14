@@ -14,6 +14,175 @@ Our project, Homebase, is designed to be a minimalistic clone of Discord, the po
 
 ![This is an image](/img/UseCaseDiagram.png)
 
+### Use Cases
+
+Use Case 1: Log In
+
+Primary Actor: User
+
+Description: User logs into account
+
+Pre-condition: User must be connected to service
+
+Post-condition: User is logged into account
+
+Main scenario:
+	
+	1. User accesses service
+	2. User locates login button
+	3. User enters credentials and logs in
+
+Extensions:
+
+	3.1 User enters invalid credentials
+		3.1.1 If user has invalid credentials, errors are shown
+
+
+
+Use Case 2: Log out
+
+Primary Actor: User
+
+Description: User logs out of account
+
+Pre-condition: User must be logged into account
+
+Post-condition: User is logged out of account
+
+Main scenario:
+	
+	1. User accesses profile
+	2. User locates logout button from profile page
+	3. User logs out of service
+
+
+
+Use Case 3: Make account
+
+Primary Actor: User
+
+Description: User can make a new account
+
+Pre-condition: User is connected to service
+
+Post-condition: User creates a new profile and is able to login
+
+Main scenario:
+
+	1. User accesses service
+	2. User locates "make account" button
+	3. User enter information and creates password
+	4. User is granted an account
+
+Extension:
+
+	3.1 User enters invalid information or invalid password creation
+		3.1.1 errors shown
+
+
+
+Use Case 4: Delete account
+
+Primary Actor: User
+
+Description: User is able to delete account from service/database
+
+Pre-condition: User must have a valid account
+
+Post-condition: User is deleted from database
+
+Main scenario: 
+
+	1. User accesses profile page
+	2. User locates "delete account"
+	3. User is asked if they really want to delete account
+	4. User deletes account
+	5. User details are removed from service database and account deleted
+
+
+
+Use Case 5: Reset Password
+
+Primary Actor: User
+
+Description: User is allowed to reset password
+
+Pre-condition: User must have a valid account
+
+Post-condition: User changes password, new password is updated in database
+
+Main scenario:
+
+	1. User can access the new password feature either from profile page or login page
+	2. User enters a security question to allow new password creation
+	3. User enters new password
+	4. Database is updated with the new password for the profile
+
+Extension:
+	
+	3.1 User enters invalid password that does not meet requirements
+		3.1.1 If user enters invalid password, Error shown and user prompted to try again
+
+
+
+Use Case 6: Make a server 
+
+Primary Actor: User
+
+Description: User is allowed to create a new server 
+
+Pre-condition: User must have a valid account
+
+Post-condition: User is made an admin of the newly created server
+
+Main scenario:
+	
+	1. User locates "create server" Button
+	2. User inputs name of new server
+	3. User can add picture for server
+	4. User adds text channels in server
+	5. Server is then created and added to service database
+
+
+
+Use Case 7: Delete server 
+
+Primary Actor: User
+
+Description: User is able to delete server, removed from database
+
+Pre-condition: User must be owner/admin of the server
+
+Post-condition: Server is deleted from the service/database
+
+Main scenario:
+
+	1. User accesses servers settings and locates the delete button
+	2. User is shown a confirmation button before proceeding
+	3. User is prompted with security question before deleting
+	4. Server is removed from service/database
+
+Extension: 
+	
+	3.1 Invalid answer to security question
+		3.1.1 If answer is invalid, error shown and user prompted to answer again. will be locked out after 3 attempts
+
+
+Use Case 8: Assigning roles
+
+Primary Actor: User 
+
+Description: Users are able to assign roles to themselves and other users on servers they are administrators on
+
+Pre-condition: User must have an account and be an admin 
+
+Post-condition: User is assigned a role
+
+Main scenario:
+	
+	1. User creates role on server
+	2. User assigns other users to created roles
+	3. User can assign itself to created roles
 
 # The Project
 
