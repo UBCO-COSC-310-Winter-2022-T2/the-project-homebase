@@ -10,6 +10,40 @@ Github Repo created and Canvas quiz pertaining to group members fully submitted
 
 Our project, Homebase, is designed to be a minimalistic clone of Discord, the popular chat and voice communication service. Within our service, users will be able to make accounts, and edit their accounts to have a personalized name, profile picture, and bio. The user will also then be able to join a server off of a unique invite code being given to them, unique to an individual server. If the user does not wish to join another server, they also have the opportunity to make their own in which they will be owner and administrator on. Within servers, users will be able to view text channels within the server, the sent messages within those text channels, and the member list of the server showing which users are online/offline. If a user is an administrator for a server they also have the opportunity to perform CRUD (create, read, update delete) operations for new and existing text channels, and create/assign roles to individual users If they are the owner, they can delete the server in its entirety also. Within a channel, a user can post a message which can include both plain text, images which will be auto embedded, and hyperlinks to other websites. While idlely browsing servers, a user will be able to see messages as they come in real time. When a user is done using the software, they will be able to log out, or potentially delete their account if they no longer want to use the service. A user can return by signing in again, and if they cannot remember their password that they used before, can request to have it reset.
 
+### Requirements
+
+#### User/Functional Requirements
+- User must be able to log in
+- User must be able to log out
+- User must be able to make an account
+- User must be able to delete account
+- User must be able to reset password
+- User must be able to make a server
+- User must be able to delete servers they are owners of
+- User must be able to assign roles to themselves and other users on servers they are administrators on
+- User must be able to join a server
+- User must be able to leave a server
+- User must be able to change their profile including:
+    - Changing PFP
+    - Changing Name
+    - Changing Short Bio
+    - Roles for server (if admin)
+- User must be swap between text channels for servers they are in
+- User must be able to perform CRUD operations for text channels for servers they are admins 
+- User must be able to send message for a given channel in a server, and has the potential to include:
+    - Basic Text
+    - Images/Files
+    - Hyperlinks
+- User must receive incoming messages as they are posted
+- User must be able to view members of server
+
+#### Non-Functional Requirements
+- Webpage must load within 5 seconds maximum
+- Newly receiving messages must load within 3 seconds maximum
+- Servers must be able to support at least 20 members minimum
+
+
+
 ### Use Case Diagram
 
 ![This is an image](/img/UseCaseDiagram.png)
