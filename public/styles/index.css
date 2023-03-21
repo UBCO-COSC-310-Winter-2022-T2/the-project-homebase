@@ -101,7 +101,7 @@
     transition: all 0.2s;
   }
   
-  a.grid-buttons__button:hover {
+  .grid-buttons__button:hover {
     border-color: rgb(255, 255, 255);
   }
 
