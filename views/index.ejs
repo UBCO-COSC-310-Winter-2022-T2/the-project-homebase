@@ -5,10 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homebase</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/index.css">
     <script src="/scripts/index.js" defer></script>
 </head>
 <body>
-    Hello World!
+    <section>
+        <h1>Welcome to Homebase!</h1>
+        <!--TODO Only show buttons if user session does not exist-->
+        <div class="grid-buttons">
+            <a href="/login" class="grid-buttons__button">
+                Login
+            </a>
+            <a href="/register" class="grid-buttons__button">
+                Register
+            </a>
+        </div>
+        <h2>Your Servers</h2>
+        <!--TODO Need to add SSR here to get user's servers-->
+        <div class="grid-servers">
+            <div class="grid-servers__server">
+                <img src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg" alt="Server 1">
+                Server 1
+            </div>
+            <div class="grid-servers__server">
+                <img src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg" alt="Server 1">
+                Server 2
+            </div>
+            <div class="grid-servers__server">
+                <img src="https://thumbs.dreamstime.com/b/cute-cat-portrait-square-photo-beautiful-white-closeup-105311158.jpg" alt="Server 1">
+                Server 3
+            </div>
+        </div>
+    </section>
 </body>
 </html>
