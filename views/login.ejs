@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homebase - Login</title>
+    <link rel="stylesheet" href="/styles/login.css">
+</head>
+<body>
+    <section class="login-box">
+        <h1>Login</h1>
+        <form action="/login/validate" method="POST">
+            <div class="login-box__username">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+            </div>
+            <div class="login-box__password">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="login-box__submit">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+        <p>
+            Don't have an account? <a href="/register">Register</a>
+        </p>
+        <p>
+            Forgot your password? <a href="/login/forgot">Reset</a>
+        </p>
+    </section>
+    
+</body>
+</html>

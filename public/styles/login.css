@@ -1,0 +1,119 @@
+
+/* Josh Comeau CSS Reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@0,700;0,900;1,400&display=swap');
+  
+  root {
+
+  }
+
+  body {
+    height: 100dvh; /* Only for landing page */
+    background-color: #2F2F2F;
+    color: #F2F2F2;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input, label {
+    display: block;
+    margin: 0.5em 0;
+  }
+
+  .login-box {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem;
+  }
+
+  .login-box__submit {
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-box__submit > *{
+    display: inline-block;
+    padding: 0.5em 1.7em;
+    margin: 1.1em auto;
+    border: 0.16em solid rgba(255, 255, 255, 0);
+    background-color: rgb(80, 10, 172);
+    border-radius: 2em;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .login-box__submit > *:hover {
+    border-color: rgb(255, 255, 255);
+  }
+  

@@ -21,7 +21,8 @@ app.get('/', (req, res) => {
 })
 
 /*-------------- ROUTES --------------*/
-
+const loginRouter = require('./routes/login')
+app.use('/login', loginRouter)
 
 
 
