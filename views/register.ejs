@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homebase</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <script src="/scripts/index.js" defer></script>
+</head>
+<body>
+    <section>
+        <h1>Register For An Account</h1>
+        <!--TODO Only show buttons if user session does not exist-->
+        <form name="MyForm" method=post action="validateRegister.ejs">
+            <table style="display:inline">
+            
+            <tr>
+                <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Username:</font></div></td>
+                <td><input type="text" name="username"  size=10 maxlength=30></td>
+            </tr>
+            <tr>
+                <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Email:</font></div></td>
+                <td><input type="text" name="email"  size=10 maxlength=30></td>
+            </tr>
+            <tr>
+                <td><div align="right"><font face="Arial, Helvetica, sans-serif" size="2">Password:</font></div></td>
+                <td><input type="password" name="password" size=10 maxlength="30"></td>
+            </tr>
+            
+            </table>
+            <br/>
+            <div align = "center"><input class="grid-buttons__button" type="submit" name="submit" value="Register"></div>
+        </form>
+
+        <div class="grid-buttons" align = "center">
+            <a href="/" class="grid-buttons__button">
+                cancel
+            </a>
+        </div>
+        
+        
+        
+    </section>
+</body>
+</html>

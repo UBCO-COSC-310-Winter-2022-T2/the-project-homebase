@@ -1,0 +1,65 @@
+<%
+const MongoClient = require('mongoose');
+
+
+// Get form data
+const firstName = req.body.firstName;
+const lastName = req.body.lastName;
+const username = req.body.username;
+const email = req.body.email;
+const password = req.body.password;
+const confirmPassword = req.body.confirmPassword;
+
+// Connect to MongoDB
+MongoClient.connect(process.env.DATABASE_URL, { useNewUrlParser: true}) {
+  if (err) throw err;
+
+  const dbo = mongoose.connection;
+
+  // Check if username already exists
+  dbo.collection("user").findOne({username: username}, function(err, result) {
+    if (err) throw err;
+
+    if (result) {
+      // Username already exists
+      res.send("Username already exists");
+      db.close();
+    } else {
+      // Check if email already exists
+      dbo.collection("users").findOne({email: email}, function(err, result) {
+        if (err) throw err;
+
+        if (result) {
+          // Email already exists
+          res.send("Email already exists");
+          db.close();
+        } else {
+          // Password and confirmPassword match
+          if (password === confirmPassword) {
+            // Add user to database
+            const user = {
+              firstName: firstName,
+              lastName: lastName,
+              username: username,
+              email: email,
+              password: password
+            };
+
+            dbo.collection("users").insertOne(user, function(err, result) {
+              if (err) throw err;
+
+              console.log("User added to database");
+              db.close();
+              res.send("Account created successfully");
+            });
+          } else {
+            // Password and confirmPassword do not match
+            res.send("Passwords do not match");
+            db.close();
+          }
+        }
+      });
+    }
+  });
+});
+%>
