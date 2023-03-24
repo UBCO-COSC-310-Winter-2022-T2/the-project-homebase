@@ -33,12 +33,12 @@ const ServerSchema = new Schema({
         type: Schema.Types.ObjectId,
         required: true
     },
-    channels: [channelSchema],
+    channels: [ChannelSchema],
     members: [{
         type: Schema.Types.ObjectId,
         ref: 'User'
     }],
-    roles: [roleSchema],
+    roles: [RoleSchema],
     avatar: {
         type: String,
         default: '' // find a picture for this
