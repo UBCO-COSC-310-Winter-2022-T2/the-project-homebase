@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const MessageSchema = new Schema({
+    serverId: {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Server'
+    },
     channelId: {
         type: Schema.Types.ObjectId,
         required: true,
@@ -9,19 +14,20 @@ const MessageSchema = new Schema({
     authorId: {
         type: Schema.Types.ObjectId,
         required: true,
+        ref: 'User'
     },
     content: {
         type: String,
         required: true
     },
-    timeStamp: {
+    createdAt: {
         type: Date,
+        required: true,
         default: Date.now
     },
-    embeds: {
-        type: Array,
-        default: []
-    }
+    embeds: [{
+        type: String
+    }]
 });
 
 module.exports = mongoose.model('message', MessageSchema);

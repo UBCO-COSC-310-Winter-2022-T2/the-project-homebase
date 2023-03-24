@@ -18,10 +18,10 @@ const UserSchema = new Schema({
         type: String,
         default: '' // find a picture for this
     },
-    servers: {
-        type: Array,
-        default: []
-    },
+    servers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Server'
+    }],
 });
 
 module.exports = mongoose.model('user', UserSchema);

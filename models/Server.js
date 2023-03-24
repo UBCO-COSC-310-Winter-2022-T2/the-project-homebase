@@ -1,6 +1,29 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const ChannelSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+});
+
+const RoleSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
+    color: {
+        type: String,
+        default: '#FFFFFF'
+    }
+
+});
+
 const ServerSchema = new Schema({
     name: {
         type: String,
@@ -10,18 +33,12 @@ const ServerSchema = new Schema({
         type: Schema.Types.ObjectId,
         required: true
     },
-    channels: {
-        type: Array,
-        default: []
-    },
-    members: {
-        type: Array,
-        default: []
-    },
-    roles: {
-        type: Array,
-        default: []
-    },
+    channels: [channelSchema],
+    members: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    roles: [roleSchema],
     avatar: {
         type: String,
         default: '' // find a picture for this
