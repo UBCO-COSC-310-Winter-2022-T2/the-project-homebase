@@ -27,7 +27,8 @@ app.get('/register', (req, res) => {
   
 
 /*-------------- ROUTES --------------*/
-
+const apiRouter = require('./routes/api')
+app.use('/api', apiRouter)
 
 
 
