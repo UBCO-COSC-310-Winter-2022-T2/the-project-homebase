@@ -4,7 +4,7 @@
   "description": "Simple discord clone for COSC 310 Project",
   "main": "app.js",
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles --forceExit",
+    "test": "jest --runInBand --forceExit",
     "devStart": "nodemon run"
   },
   "author": "",

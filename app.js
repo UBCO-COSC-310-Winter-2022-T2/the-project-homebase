@@ -19,7 +19,7 @@ const mongoose = require('mongoose')
 mongoose.set('strictQuery', true)
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true }) // Will fail until we set up a DB on MongoDB Atlas
 
-mongoose.connection
+const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 
@@ -146,7 +146,6 @@ app.post('/registerPage',async (req,res)=>{
     // check if user already exists
     const user = await User.findOne({ email: data.email })
     if (user) {
-        res.send('User already exists')
         return
     }
 
@@ -154,7 +153,7 @@ app.post('/registerPage',async (req,res)=>{
     //if have time should probably hash the password
     await User.insertMany([data])
 
-    //redirect to homepage 
+    //redirect to homepage
     res.render('index')
 
     
