@@ -10,13 +10,22 @@
 </head>
 <body>
     <section>
+        <!--when an account is deleted and redirected to this page, it should tell user "account deleted"-->
+        <!-- <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const accountDeleted = urlParams.get('accountDeleted');
+            if (accountDeleted === 'true') {
+                alert('Your account has been deleted.');
+            }
+        </script> -->
+
         <h1>Welcome to Homebase!</h1>
         <!--TODO Only show buttons if user session does not exist-->
         <div class="grid-buttons">
             <a href="/login" class="grid-buttons__button">
                 Login
             </a>
-            <a href="/register" class="grid-buttons__button">
+            <a href="/registerPage" class="grid-buttons__button">
                 Register
             </a>
         </div>
@@ -37,5 +46,7 @@
             </div>
         </div>
     </section>
+
+    
 </body>
 </html>
