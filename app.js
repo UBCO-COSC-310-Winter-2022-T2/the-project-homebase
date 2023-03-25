@@ -160,6 +160,7 @@ app.post('/registerPage',async (req,res)=>{
     
 })
 
+
 //login
 app.post('/login',async (req,res)=>{
     
@@ -209,9 +210,11 @@ app.post('/deleteAccount', async (req, res) => {
     }
   });
   
-
-
-  
+// TESTING STUFF
+function sum(a, b) {
+    return a + b;
+}
+module.exports = sum;
 
 
 
