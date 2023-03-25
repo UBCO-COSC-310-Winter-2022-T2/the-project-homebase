@@ -19,7 +19,7 @@ const mongoose = require('mongoose')
 mongoose.set('strictQuery', true)
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true }) // Will fail until we set up a DB on MongoDB Atlas
 
-const db = mongoose.connection
+mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to Mongoose'))
 
