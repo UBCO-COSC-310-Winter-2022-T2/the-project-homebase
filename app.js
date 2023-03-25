@@ -135,13 +135,19 @@ app.post('/resetPassword/:id/:token',async (req,res,next) => {
 })
 
 //register
-//need to add situation for duplicates
+
 app.post('/registerPage',async (req,res)=>{
     //get data from form
     const data = {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
+    }
+    // check if user already exists
+    const user = await User.findOne({ email: data.email })
+    if (user) {
+        res.send('User already exists')
+        return
     }
 
     //give data to mongo
