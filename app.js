@@ -146,6 +146,7 @@ app.post('/registerPage',async (req,res)=>{
     // check if user already exists
     const user = await User.findOne({ email: data.email })
     if (user) {
+        res.send('User already exists')
         return
     }
 
@@ -153,7 +154,7 @@ app.post('/registerPage',async (req,res)=>{
     //if have time should probably hash the password
     await User.insertMany([data])
 
-    //redirect to homepage
+    //redirect to homepage 
     res.render('index')
 
     
