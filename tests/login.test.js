@@ -1,15 +1,14 @@
-const request = require('supertest')
-const mongoose = require('mongoose')
-const {MongoClient} = require('mongodb');
-const app = require('../app.js')
-const User = require('../models/User')
+const request = require("supertest");
+const { MongoClient } = require("mongodb");
+const app = require("../app.js");
+const User = require("../models/User");
 
-it('should render index', async () => {
-  const response = await request(app).get('/')
-  expect(response.statusCode).toBe(200)
-})
+it("should render index", async () => {
+  const response = await request(app).get("/");
+  expect(response.statusCode).toBe(200);
+});
 
-describe('POST /registerPage', () => {
+describe("POST /registerPage", () => {
   let connection;
   let db;
 
@@ -25,23 +24,20 @@ describe('POST /registerPage', () => {
     await connection.close();
   });
 
-  it('should register a new user', async () => {
-
+  it("should register a new user", async () => {
     const newUser = {
-      username: 'testuser',
-      email: 'testuser@example.com',
-      password: 'testpassword'
-    }
+      username: "testuser",
+      email: "testuser@example.com",
+      password: "testpassword",
+    };
 
-    const response = await request(app)
-    .post('/registerPage')
-    .send(newUser)
+    const response = await request(app).post("/registerPage").send(newUser);
 
-    expect(response.statusCode).toBe(200)
+    expect(response.statusCode).toBe(200);
 
-    const user = await User.findOne({ email: newUser.email })
-    expect(user).toBeDefined()
-    expect(user.username).toBe(newUser.username)
-    expect(user.password).toBe(newUser.password)
-  })
+    const user = await User.findOne({ email: newUser.email });
+    expect(user).toBeDefined();
+    expect(user.username).toBe(newUser.username);
+    expect(user.password).toBe(newUser.password);
+  });
 });
