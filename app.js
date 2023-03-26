@@ -1,19 +1,15 @@
-if(process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
-}
-
-
 const express = require('express')
 const jwt = require('jsonwebtoken')
 const app = express()
 const User = require('./models/User')
 
-
-
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended: false})) // For body parsing
 
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 
 const mongoose = require('mongoose')
 mongoose.set('strictQuery', true)
@@ -209,12 +205,6 @@ app.post('/deleteAccount', async (req, res) => {
     }
   });
   
-// TESTING STUFF
-function sum(a, b) {
-    return a + b;
-}
-module.exports = sum;
-
 
 
 /*-------------- ROUTES --------------*/
@@ -223,7 +213,4 @@ app.use('/api', apiRouter)
 
 
 
-
-
-
-app.listen(process.env.PORT || 3000)
+module.exports = app
