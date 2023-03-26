@@ -41,7 +41,6 @@ app.get('/deleteAccount', (req, res) => {
 })
 app.get('/home', (req, res) => {
     const username = req.query.username
-    res.render('home', { username })
 })
 
 //forgot password
@@ -155,7 +154,7 @@ app.post('/registerPage',async (req,res)=>{
     await User.insertMany([data])
 
     //redirect to homepage 
-    res.render('index')
+    res.status(200).render('index')
 
     
 })
