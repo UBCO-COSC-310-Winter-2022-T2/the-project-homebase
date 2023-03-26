@@ -139,7 +139,7 @@ app.post("/registerPage", async (req, res) => {
   // check if user already exists
   const user = await User.findOne({ email: data.email });
   if (user) {
-    res.send("User already exists");
+    res.status(400).send("User already exists");
     return;
   }
 
