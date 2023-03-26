@@ -6,6 +6,7 @@ const User = require('./models/User')
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended: false})) // For body parsing
+app.use(express.json()) // For JSON body parsing (required for SuperTest testing)
 
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
@@ -133,6 +134,9 @@ app.post('/resetPassword/:id/:token',async (req,res,next) => {
 
 app.post('/registerPage',async (req,res)=>{
     //get data from form
+
+    console.log(req.body.username)
+
     const data = {
         username: req.body.username,
         email: req.body.email,

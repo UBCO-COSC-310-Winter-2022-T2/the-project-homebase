@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --runInBand --forceExit",
-    "devStart": "nodemon run"
+    "devStart": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
