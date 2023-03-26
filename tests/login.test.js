@@ -39,7 +39,7 @@ describe("POST /registerPage", () => {
 
   afterAll(async () => {
     // clear database and close connection
-    await db.collection("users").deleteMany({});
+    await User.deleteMany({});
     await connection.close();
   });
 
@@ -76,3 +76,23 @@ describe("POST /registerPage", () => {
     expect(response2.statusCode).toBe(400);
   });
 });
+
+// describe("POST /forgotPassword", () => {
+//   let connection;
+//   let db;
+
+//   beforeAll(async () => {
+//     // connect to a new in-memory database before running any tests
+//     connection = await MongoClient.connect(globalThis.__MONGO_URI__, {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     });
+//     db = await connection.db(globalThis.__MONGO_DB_NAME__);
+//   });
+
+//   afterAll(async () => {
+//     // clear database and close connection
+//     await User.deleteMany({});
+//     await connection.close();
+//   });
+// });
