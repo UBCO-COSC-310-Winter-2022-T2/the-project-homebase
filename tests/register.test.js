@@ -1,5 +1,6 @@
 const request = require("supertest");
-const { MongoClient } = require("mongodb");
+const { MongoMemoryServer  } = require("mongodb-memory-server");
+const mongoose = require("mongoose");
 const app = require("../app.js");
 const User = require("../models/User");
 
@@ -10,17 +11,20 @@ describe("POST /register", () => {
   
     beforeAll(async () => {
       // connect to a new in-memory database before running any tests
-      connection = await MongoClient.connect(globalThis.__MONGO_URI__, {
+      mongo = await MongoMemoryServer.create();
+      const uri = mongo.getUri();
+
+      connection = await mongoose.connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });
-      db = await connection.db(globalThis.__MONGO_DB_NAME__);
     });
   
     afterAll(async () => {
       // clear database and close connection
-      await User.deleteMany({});
-      await connection.close();
+      await mongoose.connection.dropDatabase();
+      await mongoose.connection.close();
+      await mongo.stop();
     });
   
     it("should register a new user", async () => {
