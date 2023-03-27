@@ -16,15 +16,9 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const mongoose = require("mongoose");
-mongoose.set("strictQuery", true);
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true }); // Will fail until we set up a DB on MongoDB Atlas
 
 app.get("/", (req, res) => {
   res.render("index");
-});
-
-app.get("/home", (req, res) => {
-  const username = req.query.username;
 });
 
 /*-------------- ROUTES --------------*/
@@ -47,9 +41,13 @@ const PORT = process.env.PORT || 3000;
 
 if(process.env.NODE_ENV !== "test") {
   app.listen(PORT, () => {
+    mongoose.set("strictQuery", true);
+    mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+
     const db = mongoose.connection;
     db.on("error", (error) => console.error(error));
     db.once("open", () => console.log("Connected to Mongoose"));
+
     console.log(`Server listening on port ${PORT}`);
   });
 }
