@@ -21,6 +21,7 @@ router.post("/edit/:id", async (req, res) => {
     try {
         user = await User.findById(req.params.id);
         //TODO - Update user avatar and store url of image in database
+        user.avatar = req.body.avatar;
         user.username = req.body.username;
         user.bio = req.body.bio;
         await user.save();
