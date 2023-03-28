@@ -42,9 +42,15 @@ Our project, Homebase, is designed to be a minimalistic clone of Discord, the po
 
 #### Non-Functional Requirements
 
-- Webpage must load within 5 seconds maximum
-- Newly receiving messages must load within 3 seconds maximum
+- ~~Webpage must load within 5 seconds maximum~~
+- ~~Newly receiving messages must load within 3 seconds maximum~~
 - Servers must be able to support at least 20 members minimum
+- Webpage will be developed using node.js with Express backend
+- Webpage will employ ejs for templating
+- Webpage will employ JavaScript for scripting
+- Testing will be made automatic through Github Actions and Jest
+- Workflow will employ CI/CD through Github Actions
+- Workflow will be based on Agile/Kanban, with tasks achieved in sprints with R&R before next sprint
 
 ### Use Case Diagram
 
