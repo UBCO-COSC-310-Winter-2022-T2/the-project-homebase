@@ -18,19 +18,21 @@ router.get("/edit/:id", async (req, res) => {
 
 router.post("/edit/:id", async (req, res) => {
     let user;
+    console.log(req.body)
     try {
         user = await User.findById(req.params.id);
         //TODO - Update user avatar and store url of image in database
         user.avatar = req.body.avatar;
         user.username = req.body.username;
         user.bio = req.body.bio;
+        console.log(user);
         await user.save();
-        res.status(200).redirect(`/user/${user.id}`);
+        res.redirect(`/user/${user.id}`);
     } catch {
         if (user == null) {
-            res.redirect("/");
+            res.status(404).redirect("/");
         } else {
-            res.render("users/edit", {
+            res.status(401).render("users/edit", {
                 user: user,
                 errorMessage: "Error updating user", // TODO - use actual http error codes
             });

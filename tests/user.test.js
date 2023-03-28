@@ -39,8 +39,13 @@ describe("POST /user/edit/:id", () => {
 
         await user.save();
 
-        const response = await request(app).post(`/user/edit/${user.id}`).send(user);
+        const response = await request(app).post(`/user/edit/${user.id}`).send({
+          user: user,
+          username: "newuser2",
+          avatar: "new avatar",
+          bio: "new bio"
+        });
 
-        expect(response.statusCode).toBe(200);
+        expect(response.statusCode).toBe(302);
         });
 });
