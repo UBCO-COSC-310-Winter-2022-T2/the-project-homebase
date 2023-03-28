@@ -346,3 +346,11 @@ Main scenario:
 Extensions:
 
     2.1: If no role is set for members, no information about them is displayed.
+
+## Milestone 3
+
+Planning documents in [./docs](docs/), including architecture, sequence, class diagrams, DFD's and Testing Report.
+
+## Milestone 4
+
+R&R Report in [docs/R&R/RR_Report1.md](docs/R&R/RR_Report1.md).
