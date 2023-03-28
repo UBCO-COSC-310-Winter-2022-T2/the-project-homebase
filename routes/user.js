@@ -18,14 +18,12 @@ router.get("/edit/:id", async (req, res) => {
 
 router.post("/edit/:id", async (req, res) => {
     let user;
-    console.log(req.body)
     try {
         user = await User.findById(req.params.id);
         //TODO - Update user avatar and store url of image in database
         user.avatar = req.body.avatar;
         user.username = req.body.username;
         user.bio = req.body.bio;
-        console.log(user);
         await user.save();
         res.redirect(`/user/${user.id}`);
     } catch {
