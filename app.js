@@ -37,6 +37,9 @@ app.use("/deleteAccount", deleteAccountRouter);
 const resetPasswordRouter = require("./routes/resetPassword");
 app.use("/resetPassword", resetPasswordRouter);
 
+const userRouter = require("./routes/user");
+app.use("/user", userRouter);
+
 const PORT = process.env.PORT || 3000;
 
 if(process.env.NODE_ENV !== "test") {
