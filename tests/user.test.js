@@ -46,6 +46,6 @@ describe("POST /user/edit/:id", () => {
           bio: "new bio"
         });
 
-        expect(response.statusCode).toBe(302);
+        expect(response.statusCode).toBe(200);
         });
 });

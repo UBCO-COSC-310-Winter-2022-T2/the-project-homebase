@@ -25,7 +25,7 @@ router.post("/edit/:id", async (req, res) => {
         user.username = req.body.username;
         user.bio = req.body.bio;
         await user.save();
-        res.redirect(`/user/${user.id}`);
+        res.status(200).render("users/userpage", {user: user});
     } catch {
         if (user == null) {
             res.status(404).redirect("/");
