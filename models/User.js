@@ -25,12 +25,6 @@ const UserSchema = new Schema({
     default: "",
     maxLength: 200
   },
-  roles: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Role",
-    },
-  ],
   servers: [
     {
       type: Schema.Types.ObjectId,
