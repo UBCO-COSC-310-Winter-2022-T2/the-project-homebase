@@ -17,6 +17,12 @@ const RoleSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  holders: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
   color: {
     type: String,
     default: "#FFFFFF",

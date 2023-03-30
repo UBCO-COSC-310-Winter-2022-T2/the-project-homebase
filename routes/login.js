@@ -13,11 +13,11 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
     try {
         //search username
-        const check = await User.findOne({ username: req.body.username });
+        const user = await User.findOne({ username: req.body.username });
 
         //check if password is the same as in database
-        if (check.password === req.body.password) {
-        res.render("home", { username: check.username }); //direct to homepage
+        if (user.password === req.body.password) {
+        res.render("home", { user }); //direct to homepage
         } else {
         res.send("wrong password"); //inform user wrong password
         }

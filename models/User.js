@@ -5,6 +5,7 @@ const UserSchema = new Schema({
   username: {
     type: String,
     required: true,
+    maxLength: 20
   },
   email: {
     type: String,
@@ -18,6 +19,11 @@ const UserSchema = new Schema({
   avatar: {
     type: String,
     default: "", // find a picture for this
+  },
+  bio: {
+    type: String,
+    default: "",
+    maxLength: 200
   },
   servers: [
     {
