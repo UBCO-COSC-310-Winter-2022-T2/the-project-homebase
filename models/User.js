@@ -5,7 +5,7 @@ const UserSchema = new Schema({
   username: {
     type: String,
     required: true,
-    maxLength: 20
+    maxLength: 20,
   },
   email: {
     type: String,
@@ -23,7 +23,7 @@ const UserSchema = new Schema({
   bio: {
     type: String,
     default: "",
-    maxLength: 200
+    maxLength: 200,
   },
   servers: [
     {

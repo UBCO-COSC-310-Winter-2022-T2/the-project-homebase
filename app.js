@@ -42,7 +42,7 @@ app.use("/user", userRouter);
 
 const PORT = process.env.PORT || 3000;
 
-if(process.env.NODE_ENV !== "test") {
+if (process.env.NODE_ENV !== "test") {
   app.listen(PORT, () => {
     mongoose.set("strictQuery", true);
     mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
@@ -56,4 +56,3 @@ if(process.env.NODE_ENV !== "test") {
 }
 
 module.exports = app;
-
