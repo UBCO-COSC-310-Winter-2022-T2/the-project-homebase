@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --runInBand --forceExit",
     "devStart": "nodemon server.js",
-    "format": "npx prettier --write ."
+    "format": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongodb-memory-server": "^8.12.1",
     "mongoose": "^7.0.2",
+    "prettier": "^2.8.7",
     "uuid": "^9.0.0"
   }
 }
