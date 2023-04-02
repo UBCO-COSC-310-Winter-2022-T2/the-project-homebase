@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "jest --runInBand --forceExit",
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "format": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
