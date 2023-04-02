@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --runInBand --forceExit",
     "devStart": "nodemon server.js",
-    "format": "npx prettier --write ."
+    "format": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
