@@ -13,22 +13,26 @@
 ### Tasks Completed
 
 **Brock**
+
 - Database Design and Schema for MongoDB/Mongoose
 - Provided troubleshooting and expertise in JavaScript web development
 - Provided boilerplate for webapp
 
 **Rommel**
+
 - Login/Logout Functionality
 - Account Creation/Deletion
 - Password Recovery
 
 **Jaidyn**
+
 - User Editing Functionality
   - Changing Profile Picture
   - Changing Name
   - Short bio
 
 **Esteban**
+
 - Testing for Login/Logout/Account Creation/Password Recovery
 - Testing for User Editing
 - Issue tracking and documentation (R&R Report)
@@ -101,17 +105,21 @@ After our retrospective, we decided to re-prioritize some of our tasks in order 
 Based on the above we decided to split it as such:
 
 **Brock**
+
 - #6
 - #7
 
 **Rommel**
+
 - #14
 
 **Jaidyn**
+
 - #9
 - #10
 
 **Esteban**
+
 - Testing for all requirements in progress
 
 ### Goals

@@ -5,7 +5,6 @@ const app = require("../app.js");
 const User = require("../models/User");
 
 let connection;
-let db;
 
 beforeAll(async () => {
   // Connect to a new in-memory database before running any tests
