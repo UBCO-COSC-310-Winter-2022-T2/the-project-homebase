@@ -14,28 +14,28 @@
 
 **Brock**
 
-- Database Design and Schema for MongoDB/Mongoose
-- Provided troubleshooting and expertise in JavaScript web development
-- Provided boilerplate for webapp
+-   Database Design and Schema for MongoDB/Mongoose
+-   Provided troubleshooting and expertise in JavaScript web development
+-   Provided boilerplate for webapp
 
 **Rommel**
 
-- Login/Logout Functionality
-- Account Creation/Deletion
-- Password Recovery
+-   Login/Logout Functionality
+-   Account Creation/Deletion
+-   Password Recovery
 
 **Jaidyn**
 
-- User Editing Functionality
-  - Changing Profile Picture
-  - Changing Name
-  - Short bio
+-   User Editing Functionality
+    -   Changing Profile Picture
+    -   Changing Name
+    -   Short bio
 
 **Esteban**
 
-- Testing for Login/Logout/Account Creation/Password Recovery
-- Testing for User Editing
-- Issue tracking and documentation (R&R Report)
+-   Testing for Login/Logout/Account Creation/Password Recovery
+-   Testing for User Editing
+-   Issue tracking and documentation (R&R Report)
 
 ### Big Picture
 
@@ -78,25 +78,25 @@ After our retrospective, we decided to re-prioritize some of our tasks in order 
 
 ### Need to Haves (in order of priority)
 
-- User must be able to make a server (#6)
-- User must be able to delete servers they are owners of (#7)
-- User must be able to join a server (#9)
-- User must be able to leave a server (#10)
-- User must be able to send message for a given channel in a server, and has the potential to include (#14):
-  - Basic Text (#14.1)
-- User must receive incoming messages as they are posted (#15)
-- Refactor home page
-- User sessions
+-   User must be able to make a server (#6)
+-   User must be able to delete servers they are owners of (#7)
+-   User must be able to join a server (#9)
+-   User must be able to leave a server (#10)
+-   User must be able to send message for a given channel in a server, and has the potential to include (#14):
+    -   Basic Text (#14.1)
+-   User must receive incoming messages as they are posted (#15)
+-   Refactor home page
+-   User sessions
 
 ### Nice To Haves (in order of priority)
 
-- User must be able to assign roles to themselves and other users on servers they are administrators on (#8)
-- User must be swap between text channels for servers they are in (#12)
-- User must be able to perform CRUD operations for text channels for servers they are admins (#13)
-- User must be able to send message for a given channel in a server, and has the potential to include:
-  - Images/Files (#14.2)
-  - Hyperlinks (#14.3)
-- User must be able to view members of server (#16)
+-   User must be able to assign roles to themselves and other users on servers they are administrators on (#8)
+-   User must be swap between text channels for servers they are in (#12)
+-   User must be able to perform CRUD operations for text channels for servers they are admins (#13)
+-   User must be able to send message for a given channel in a server, and has the potential to include:
+    -   Images/Files (#14.2)
+    -   Hyperlinks (#14.3)
+-   User must be able to view members of server (#16)
 
 ## Future Sprint Split and Goals
 
@@ -106,21 +106,21 @@ Based on the above we decided to split it as such:
 
 **Brock**
 
-- #6
-- #7
+-   #6
+-   #7
 
 **Rommel**
 
-- #14
+-   #14
 
 **Jaidyn**
 
-- #9
-- #10
+-   #9
+-   #10
 
 **Esteban**
 
-- Testing for all requirements in progress
+-   Testing for all requirements in progress
 
 ### Goals
 

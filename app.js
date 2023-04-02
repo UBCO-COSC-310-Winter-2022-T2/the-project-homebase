@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
+    require("dotenv").config();
 }
 
 const express = require("express");
@@ -12,13 +12,13 @@ app.use(express.urlencoded({ extended: false })); // For body parsing
 app.use(express.json()); // For JSON body parsing (required for SuperTest testing)
 
 if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
+    require("dotenv").config();
 }
 
 const mongoose = require("mongoose");
 
 app.get("/", (req, res) => {
-  res.render("index");
+    res.render("index");
 });
 
 /*-------------- ROUTES --------------*/
@@ -43,16 +43,16 @@ app.use("/user", userRouter);
 const PORT = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV !== "test") {
-  app.listen(PORT, () => {
-    mongoose.set("strictQuery", true);
-    mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+    app.listen(PORT, () => {
+        mongoose.set("strictQuery", true);
+        mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 
-    const db = mongoose.connection;
-    db.on("error", (error) => console.error(error));
-    db.once("open", () => console.log("Connected to Mongoose"));
+        const db = mongoose.connection;
+        db.on("error", (error) => console.error(error));
+        db.once("open", () => console.log("Connected to Mongoose"));
 
-    console.log(`Server listening on port ${PORT}`);
-  });
+        console.log(`Server listening on port ${PORT}`);
+    });
 }
 
 module.exports = app;
