@@ -4,28 +4,46 @@ const mongoose = require("mongoose");
 const app = require("../app.js");
 const User = require("../models/User");
 
-describe("POST /user/edit/:id", () => {
-  let connection;
-  let db;
+let connection;
+let db;
 
-  beforeAll(async () => {
-    // connect to a new in-memory database before running any tests
-    mongo = await MongoMemoryServer.create();
-    const uri = mongo.getUri();
+beforeAll(async () => {
+  // connect to a new in-memory database before running any tests
+  mongo = await MongoMemoryServer.create();
+  const uri = mongo.getUri();
 
-    connection = await mongoose.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+  connection = await mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+});
+
+afterAll(async () => {
+  // clear database and close connection
+  await mongoose.connection.dropDatabase();
+  await mongoose.connection.close();
+  await mongo.stop();
+});
+
+describe("GET /user/edit/:id", () => {
+  it("should render user profile", async () => {
+    const user = new User({
+      username: "newuser2",
+      email: "newuser2@example.com",
+      password: "newpassword",
+      bio: "hello",
+      avatar:
+        "https://cdn1.iconfinder.com/data/icons/basic-ui-set-v5-user-outline/64/Account_profile_user_avatar_small-512.png", //TEMP
     });
-  });
 
-  afterAll(async () => {
-    // clear database and close connection
-    await mongoose.connection.dropDatabase();
-    await mongoose.connection.close();
-    await mongo.stop();
-  });
+    await user.save();
 
+    let response = await request(app).get(`/user/edit/${user.id}`);
+    expect(response.statusCode).toBe(200);
+  });
+});
+
+describe("POST /user/edit/:id", () => {
   it("should edit a user", async () => {
     const user = new User({
       username: "newuser",
