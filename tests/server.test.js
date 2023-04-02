@@ -58,4 +58,35 @@ describe("POST /server", () => {
         expect(response.statusCode).toBe(200);
         expect(server.members).toContain(user.id);
     });
+
+    it("should leave a server", async () => {
+        const user = new User({
+            username: "newuser",
+            email: "newuser@example.com",
+            password: "newpassword",
+            bio: "hello",
+            avatar:
+              "https://cdn1.iconfinder.com/data/icons/basic-ui-set-v5-user-outline/64/Account_profile_user_avatar_small-512.png", //TEMP
+          });
+
+        await user.save();
+
+        const server = new Server({
+            name: "newserver",
+            ownerId: user.id,
+            channels: [
+                {
+                    name: "general",
+                }
+            ],
+            members: [user]
+        });
+
+        await server.save();
+
+        const response = await request(app).post(`/server/${server.name}/leave`).send({user});
+
+        expect(response.statusCode).toBe(200);
+        expect(server.members).not.toContain(user);
+    });
 });
