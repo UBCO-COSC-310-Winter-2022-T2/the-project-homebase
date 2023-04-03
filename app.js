@@ -40,6 +40,9 @@ app.use("/resetPassword", resetPasswordRouter);
 const userRouter = require("./routes/user");
 app.use("/user", userRouter);
 
+const serverRouter = require("./routes/server");
+app.use("/server", serverRouter);
+
 const PORT = process.env.PORT || 3000;
 
 if (process.env.NODE_ENV !== "test") {
