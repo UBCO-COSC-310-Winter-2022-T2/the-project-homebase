@@ -3,9 +3,12 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const express = require("express");
-const app = express();
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const mongoose = require("mongoose");
 const User = require("./models/User");
 
+const app = express();
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: false })); // For body parsing
@@ -15,9 +18,8 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
 
-const mongoose = require("mongoose");
-
 app.get("/", (req, res) => {
+  console.log(req.session)
   res.render("index");
 });
 
@@ -50,6 +52,20 @@ if(process.env.NODE_ENV !== "test") {
     const db = mongoose.connection;
     db.on("error", (error) => console.error(error));
     db.once("open", () => console.log("Connected to Mongoose"));
+
+    // Store sessions on MongoDB
+    const sessionStore = MongoStore.create({
+      client: db.getClient(),
+      collectionName: "sessions",
+      ttl: 60 * 60 * 24 * 7, // 1 week
+    });
+
+    // Session middleware
+    app.use(session({ secret: process.env.SESSION_SECRET,
+      resave: false,
+      saveUninitialized: false,
+      store: sessionStore,
+      cookie: { maxAge: 1000 * 60 * 60 * 24 * 7 } }));
 
     console.log(`Server listening on port ${PORT}`);
   });
