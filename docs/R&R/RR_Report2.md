@@ -4,9 +4,15 @@
 
 ### Github Projects Snapshot
 
+![Github Projects Snapshot](../../img/M5_ProjectProgress1.png)
+
 ### Milestone Snapshot
 
+![Milestone Progress](../../img/M5_ProjectProgress2.png)
+
 ### Burnup Chart
+
+![Burnup Chart](../../img/M5_burnup.png)
 
 ### Tasks Completed
 
@@ -69,13 +75,7 @@ After our retrospective, we decided to continue working on tasks which need more
 
 ### Need to Haves (in order of priority)
 
-- User must be able to make a server (#6)
-- User must be able to delete servers they are owners of (#7)
-- User must be able to join a server (#9)
 - User must be able to leave a server (#10)
-- User must be able to send message for a given channel in a server, and has the potential to include (#14):
-  - Basic Text (#14.1)
-- User must receive incoming messages as they are posted (#15)
 - Refactor home page
 - User sessions
 
@@ -89,25 +89,8 @@ After our retrospective, we decided to continue working on tasks which need more
   - Hyperlinks (#14.3)
 - User must be able to view members of server (#16)
 
-## Future Sprint Split and Goals
+## Goals
 
-### Split
-
-Based on the above we decided to split it as such:
-
-**Brock**
-
-**Rommel**
-
-**Jaidyn**
-
-- User must be able to join a server (#9)
-- User must be able to leave a server (#10)
-
-**Esteban**
-
-- Testing for all requirements in progress
-
-### Goals
-
-Working prototype by Monday at best, Thursday at worst, so we can focus on bugs / nice to have's
+- Working prototype by Thursday
+- Bug fixes for prototype
+- Refactoring and cleanup for next Monday
