@@ -16,6 +16,8 @@
 - Server creation/deletion (WIP)
 
 **Rommel**
+-- Implemented sockets and real time messaging
+-- Refactoring overall messaging features (WIP)
 
 **Jaidyn**
 
@@ -48,6 +50,13 @@ Currently, the main branch is passing all tests save for server joining/leaving,
 I started implementing the server creation/deletion features, however found that the workflow was awkward without any user authentication, so I branched off to implement that. Unfortunately the timing for this milestone is coinciding with many other deadlines from other courses, so I was unable to completely finish the implementation. That being said, within current feature branch for authentication, a simple local-strategy using passportjs and express session storing using MongoDB is functional now.
 
 **Rommel**
+
+I worked on implementing the messaging functionalities for this milestone. Overall it was fine, to get the basic realtime
+chat functions between users up and running. However, the messaging feature is quite complex when combining it with our 
+whole program. At the moment, messaging between users works in real time, however things have to be adjusted and implemented
+to fit the scope of our project. This includes: verifying the user before entering a room/server, verifying room/server codes,
+maintaining previous conversations, adding the ability to send images/hyperlinks, etc. Moving forward keeping a constant
+velocity will help address these functionalities and benefit the team. 
 
 **Jaidyn**
 
