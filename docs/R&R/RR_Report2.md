@@ -12,6 +12,8 @@
 
 **Brock**
 - Implemented authentication with session stores in MongoDB
+- Refactoring to include proper authentication (WIP)
+- Server creation/deletion (WIP)
 
 **Rommel**
 
