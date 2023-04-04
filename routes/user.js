@@ -10,7 +10,7 @@ const Message = require("../models/Message");
 
 router.get("/:id", async (req, res) => {
   const user = await User.findById(req.params.id);
-  res.render("users/userpage, { user: user }");
+  res.render("users/userpage", { user: user });
 });
 
 router.get("/edit/:id", async (req, res) => {
