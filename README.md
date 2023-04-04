@@ -354,3 +354,7 @@ Planning documents in [./docs](docs/), including architecture, sequence, class d
 ## Milestone 4
 
 R&R Report in [docs/R&R/RR_Report1.md](docs/R&R/RR_Report1.md).
+
+## Milestone 5
+
+R&R Report in [docs/R&R/RR_Report2.md](docs/R&R/RR_Report2.md).
