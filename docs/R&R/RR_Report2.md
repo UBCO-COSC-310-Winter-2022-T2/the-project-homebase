@@ -16,6 +16,10 @@
 
 **Jaidyn**
 
+- Join server functionality
+- Leave server functionality (WIP)
+- Bug fixes on the user/edit (WIP)
+
 **Esteban**
 
 - Testing for Server Create/Delete
@@ -41,6 +45,8 @@ Currently, the main branch is passing all tests save for server joining/leaving,
 **Rommel**
 
 **Jaidyn**
+
+I worked on the join/leave server functionality and some bug fixes for this milestone. I was able to finish the join functionality but am still working on the other features. I had a busy week with midterms and work so I was not able to work on this milestone as much as i'd have liked to. I am planning on spending alot more time this week on the project.
 
 **Esteban**
 
@@ -89,6 +95,9 @@ Based on the above we decided to split it as such:
 **Rommel**
 
 **Jaidyn**
+
+- User must be able to join a server (#9)
+- User must be able to leave a server (#10)
 
 **Esteban**
 
