@@ -11,6 +11,7 @@
 ### Tasks Completed
 
 **Brock**
+- Implemented authentication with session stores in MongoDB
 
 **Rommel**
 
@@ -41,6 +42,8 @@ Currently, the main branch is passing all tests save for server joining/leaving,
 ### Members
 
 **Brock**
+
+I started implementing the server creation/deletion features, however found that the workflow was awkward without any user authentication, so I branched off to implement that. Unfortunately the timing for this milestone is coinciding with many other deadlines from other courses, so I was unable to completely finish the implementation. That being said, within current feature branch for authentication, a simple local-strategy using passportjs and express session storing using MongoDB is functional now.
 
 **Rommel**
 
