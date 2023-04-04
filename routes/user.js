@@ -1,6 +1,8 @@
 /* ANY FRONT END API ENDPOINTS GO HERE */
 const express = require("express");
 const router = express.Router();
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 
 const User = require("../models/User");
 const Server = require("../models/Server");
@@ -16,7 +18,7 @@ router.get("/edit/:id", async (req, res) => {
   res.render("users/edit", { user: user });
 });
 
-router.post("/edit/:id", async (req, res) => {
+router.post("/edit/:id", upload.single('avatar'), async (req, res) => {
   let user;
   try {
     user = await User.findById(req.params.id);
