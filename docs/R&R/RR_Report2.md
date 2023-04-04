@@ -48,7 +48,7 @@ For this milestone, I found that I worked much more fluidly than before thanks t
 
 ### Team
 
-Team morale is better than before, with team members feeling much more familiar with the language and tools we are using. Communication in the team has been excellent overall, with team members feeling comfortable reaching out for help with problems and being honest about their experiences with their respective tasks. We wish we could have done a slightly better job with estimating the time some tasks were going to take, but are still looking forward to our Thursday deadline being a success.
+Team morale is better than before, with team members feeling much more familiar with the language and tools we are using. Communication in the team has been excellent overall, with team members feeling comfortable reaching out for help with problems and being honest about their experiences with their respective tasks. Some of us are feeling slightly anxious about the upcoming tasks being more difficult than what we have tackled so far, but we think the bulk of the work is done and more team members will be available for cooperating on larger tasks. We wish we could have done a slightly better job with estimating the time some tasks were going to take, but are still looking forward to our Thursday deadline being a success. 
 
 We have encountered less challenges than before, and were therefore able to take on larger tasks. The velocity of the project (reflected in the burnup chart) is consistent, and satisfactory for this part of the process.
 
