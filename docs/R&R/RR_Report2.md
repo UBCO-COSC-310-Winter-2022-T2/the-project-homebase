@@ -22,8 +22,8 @@
 - Server creation/deletion (WIP)
 
 **Rommel**
--- Implemented sockets and real time messaging
--- Refactoring overall messaging features (WIP)
+-Implemented sockets and real time messaging
+- Refactoring overall messaging features (WIP)
 
 **Jaidyn**
 
