@@ -7,8 +7,13 @@ const app = express();
 const User = require("./models/User");
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
-const formatMessage = require('./routes/messages');
-const { userJoin, getCurrentUser, userLeave, getRoomUsers} = require('./routes/userChat');
+const formatMessage = require("./routes/messages");
+const {
+  userJoin,
+  getCurrentUser,
+  userLeave,
+  getRoomUsers,
+} = require("./routes/userChat");
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -37,7 +42,7 @@ app.get("/chat", async (req, res) => {
 
 app.post("/chat", async (req, res) => {
   const { username, room } = req.body;
-  
+
   res.redirect(`/chat?username=${username}&room=${room}`);
 });
 
@@ -65,56 +70,56 @@ server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
 
-
-
-const botName = 'Homebase Bot';
+const botName = "Homebase Bot";
 //when user connects
 io.on("connection", (socket) => {
-  socket.on('joinRoom', ({username, room}) => {
-  const user = userJoin(socket.id,username, room);
-  socket.join(user.room);
+  socket.on("joinRoom", ({ username, room }) => {
+    const user = userJoin(socket.id, username, room);
+    socket.join(user.room);
 
     //welcome current user
-  socket.emit('message',formatMessage(botName ,'welcome to chat'));
+    socket.emit("message", formatMessage(botName, "welcome to chat"));
 
-  //broadcast when a user connects
-  //broadcast to specific room
-  socket.broadcast
-    .to(user.room)
-    .emit('message',formatMessage(botName ,`${user.username} has joined the chat`));
+    //broadcast when a user connects
+    //broadcast to specific room
+    socket.broadcast
+      .to(user.room)
+      .emit(
+        "message",
+        formatMessage(botName, `${user.username} has joined the chat`)
+      );
 
     //send users and room info
-    io.to(user.room).emit('roomUsers', {
+    io.to(user.room).emit("roomUsers", {
       room: user.room,
-      users: getRoomUsers(user.room)
+      users: getRoomUsers(user.room),
     });
-
   });
-  
+
   //listen for chatMessage from main.js
-  socket.on('chatMessage', (msg) => {
+  socket.on("chatMessage", (msg) => {
     const user = getCurrentUser(socket.id);
-    
+
     //emit to everyone in room
-    io.to(user.room).emit('message', formatMessage(user.username,msg));
+    io.to(user.room).emit("message", formatMessage(user.username, msg));
   });
 
   //runs when client disconnects
-  socket.on('disconnect', () => {
+  socket.on("disconnect", () => {
     const user = userLeave(socket.id);
 
-    if(user){
-      io.to(user.room).emit('message',formatMessage(botName ,`${user.username} disconnected`));
+    if (user) {
+      io.to(user.room).emit(
+        "message",
+        formatMessage(botName, `${user.username} disconnected`)
+      );
     }
     //send users and room info when they leave
-    io.to(user.room).emit('roomUsers', {
+    io.to(user.room).emit("roomUsers", {
       room: user.room,
-      users: getRoomUsers(user.room)
+      users: getRoomUsers(user.room),
     });
-    
   });
-
-  
 
   socket.on("chat message", (msg) => {
     console.log("message: " + msg);
@@ -130,6 +135,5 @@ if (process.env.NODE_ENV !== "test") {
   db.on("error", (error) => console.error(error));
   db.once("open", () => console.log("Connected to Mongoose"));
 }
-
 
 module.exports = app;
