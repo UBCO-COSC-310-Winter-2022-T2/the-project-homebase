@@ -1,45 +1,51 @@
+/*get form element, socket object, and DOM(document object model) elements
+for displaying chat messages, room name, and user list*/
 const chatForm = document.getElementById("chat-form");
 const socket = io();
 const chatMessages = document.querySelector(".chat-messages");
 const roomName = document.getElementById("room=name");
 const userList = document.getElementById("users");
 
-// get username and room from URL
+// get username and room from URL using Qs library
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
 
 //join chatroom
-socket.emit("joinRoom", { username, room });
+socket.emit("joinRoom", { username, room }); //emit a "joinRoom" event to the server w/ username and room
 
 //get room and users
+//listen for the "roomUsers" event from the server, which sends the room and users data
 socket.on("roomUsers", ({ room, users }) => {
+  //output room name and users to the DOM
   outputRoomName(room);
   outputUsers(users);
 });
 
 //message from server
+//listen for "message" event from server, which sends a chat message
 socket.on("message", (message) => {
   console.log(message);
+  //output message to DOM
   outputMessage(message);
 
-  //scroll down when theres a message
+  //scroll down to bottom of chat window when theres a message
   chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
 //message submit
+//listen for a submit event on the chat form
 chatForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  //get message text
+  //get message text from the input element
   const msg = e.target.elements.msg.value;
 
   // emit message to server
   socket.emit("chatMessage", msg);
 
-  //clear input in text bar
+  //clear input in text bar and focus on text bar
   e.target.elements.msg.value = "";
-  //focus after clearing
   e.target.elements.msg.focus();
 });
 

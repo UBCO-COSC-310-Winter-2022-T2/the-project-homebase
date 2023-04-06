@@ -71,17 +71,20 @@ server.listen(PORT, () => {
 });
 
 const botName = "Homebase Bot";
+
 //when user connects
+//listen for a new socket connection
 io.on("connection", (socket) => {
+  //when a user joins a room
   socket.on("joinRoom", ({ username, room }) => {
+    //add user to the users array and join the room
     const user = userJoin(socket.id, username, room);
     socket.join(user.room);
 
     //welcome current user
     socket.emit("message", formatMessage(botName, "welcome to chat"));
 
-    //broadcast when a user connects
-    //broadcast to specific room
+    //broadcast to the room when a user joins
     socket.broadcast
       .to(user.room)
       .emit(
@@ -89,42 +92,41 @@ io.on("connection", (socket) => {
         formatMessage(botName, `${user.username} has joined the chat`)
       );
 
-    //send users and room info
+    //send the room name and user list to all users in the room
     io.to(user.room).emit("roomUsers", {
       room: user.room,
       users: getRoomUsers(user.room),
     });
   });
 
-  //listen for chatMessage from main.js
+  //listen for chatMessage(main.js) from a user
   socket.on("chatMessage", (msg) => {
+    //get the current user and emit the message to everyone in room
     const user = getCurrentUser(socket.id);
-
-    //emit to everyone in room
     io.to(user.room).emit("message", formatMessage(user.username, msg));
   });
 
-  //runs when client disconnects
+  //listen for a socket disconnect
   socket.on("disconnect", () => {
+    //remove the user from the users array and emit a message to the room
     const user = userLeave(socket.id);
-
     if (user) {
       io.to(user.room).emit(
         "message",
         formatMessage(botName, `${user.username} disconnected`)
       );
     }
-    //send users and room info when they leave
+    //send the updated room user list to all users in the room
     io.to(user.room).emit("roomUsers", {
       room: user.room,
       users: getRoomUsers(user.room),
     });
   });
 
-  socket.on("chat message", (msg) => {
-    console.log("message: " + msg);
-    io.emit("chat message", msg);
-  });
+  // socket.on("chat message", (msg) => {
+  //   console.log("message: " + msg);
+  //   io.emit("chat message", msg);
+  // });
 });
 
 if (process.env.NODE_ENV !== "test") {
