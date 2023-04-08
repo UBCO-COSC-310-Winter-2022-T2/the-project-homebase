@@ -32,8 +32,9 @@ app.get("/", (req, res) => {
 
 /*-------------- ROUTES --------------*/
 //move to routes after
-app.get("/chatRooms", (req, res) => {
-  res.render("chatRooms");
+app.get("/chatRooms", async (req, res) => {
+  const username = req.query.username;
+  res.render("chatRooms", { username });
 });
 
 app.get("/chat", async (req, res) => {
