@@ -16,41 +16,41 @@ Our project, Homebase, is designed to be a minimalistic clone of Discord, the po
 
 #### User/Functional Requirements
 
-- User must be able to log in
-- User must be able to log out
-- User must be able to make an account
-- User must be able to delete account
-- User must be able to reset password
-- User must be able to make a server
-- User must be able to delete servers they are owners of
-- User must be able to assign roles to themselves and other users on servers they are administrators on
-- User must be able to join a server
-- User must be able to leave a server
-- User must be able to change their profile including:
-  - Changing PFP
-  - Changing Name
-  - Changing Short Bio
-  - Roles for server (if admin)
-- User must be swap between text channels for servers they are in
-- User must be able to perform CRUD operations for text channels for servers they are admins
-- User must be able to send message for a given channel in a server, and has the potential to include:
-  - Basic Text
-  - Images/Files
-  - Hyperlinks
-- User must receive incoming messages as they are posted
-- User must be able to view members of server
+-   User must be able to log in
+-   User must be able to log out
+-   User must be able to make an account
+-   User must be able to delete account
+-   User must be able to reset password
+-   User must be able to make a server
+-   User must be able to delete servers they are owners of
+-   User must be able to assign roles to themselves and other users on servers they are administrators on
+-   User must be able to join a server
+-   User must be able to leave a server
+-   User must be able to change their profile including:
+    -   Changing PFP
+    -   Changing Name
+    -   Changing Short Bio
+    -   Roles for server (if admin)
+-   User must be swap between text channels for servers they are in
+-   User must be able to perform CRUD operations for text channels for servers they are admins
+-   User must be able to send message for a given channel in a server, and has the potential to include:
+    -   Basic Text
+    -   Images/Files
+    -   Hyperlinks
+-   User must receive incoming messages as they are posted
+-   User must be able to view members of server
 
 #### Non-Functional Requirements
 
-- ~~Webpage must load within 5 seconds maximum~~
-- ~~Newly receiving messages must load within 3 seconds maximum~~
-- Servers must be able to support at least 20 members minimum
-- Webpage will be developed using node.js with Express backend
-- Webpage will employ ejs for templating
-- Webpage will employ JavaScript for scripting
-- Testing will be made automatic through Github Actions and Jest
-- Workflow will employ CI/CD through Github Actions
-- Workflow will be based on Agile/Kanban, with tasks achieved in sprints with R&R before next sprint
+-   ~~Webpage must load within 5 seconds maximum~~
+-   ~~Newly receiving messages must load within 3 seconds maximum~~
+-   Servers must be able to support at least 20 members minimum
+-   Webpage will be developed using node.js with Express backend
+-   Webpage will employ ejs for templating
+-   Webpage will employ JavaScript for scripting
+-   Testing will be made automatic through Github Actions and Jest
+-   Workflow will employ CI/CD through Github Actions
+-   Workflow will be based on Agile/Kanban, with tasks achieved in sprints with R&R before next sprint
 
 ### Use Case Diagram
 

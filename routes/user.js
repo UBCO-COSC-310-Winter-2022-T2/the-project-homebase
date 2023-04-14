@@ -16,8 +16,8 @@ router.get("/:id", async (req, res) => {
 });
 
 router.get("/edit/:id", async (req, res) => {
-  const user = await User.findById(req.params.id);
-  res.render("users/edit", { user: user });
+    const user = await User.findById(req.params.id);
+    res.render("users/edit", { user: user });
 });
 
 router.post("/edit/:id", upload.single('avatar'), async (req, res) => {
