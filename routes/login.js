@@ -12,9 +12,9 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", passport.authenticate('local'), async (req, res) => {
-    try {
-        //search username
-        const user = await User.findOne({ username: req.body.username });
+  try {
+      //search username
+      const user = await User.findOne({ username: req.body.username });
 
     //check if password is the same as in database
     if (user.password === req.body.password) {
