@@ -12,10 +12,6 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: false })); // For body parsing
 app.use(express.json()); // For JSON body parsing (required for SuperTest testing)
 
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-
 app.get("/", (req, res) => {
   console.log(req.session)
   res.render("index");
