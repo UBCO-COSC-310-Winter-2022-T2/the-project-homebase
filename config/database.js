@@ -5,6 +5,6 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 mongoose.set("strictQuery", true);
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASE_URL_LOCAL, { useNewUrlParser: true });
 
 module.exports = mongoose.connection;
