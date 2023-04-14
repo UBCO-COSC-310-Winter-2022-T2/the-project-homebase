@@ -30,9 +30,8 @@ passport.serializeUser((user, done) => {
 
 // Retrieves the user's information from the session user id
 passport.deserializeUser((id, done) => {
-    User.findById(id, (err, user) => {
-        done(err, user);
-    }).then(user => {
+    User.findById(id)
+    .then(user => {
         done(null, user);
         }).catch(err => {
             done(err);

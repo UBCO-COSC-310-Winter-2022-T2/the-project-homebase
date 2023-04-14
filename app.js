@@ -21,25 +21,6 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-/*-------------- ROUTES --------------*/
-const apiRouter = require("./routes/api");
-app.use("/api", apiRouter);
-
-const loginRouter = require("./routes/login");
-app.use("/login", loginRouter);
-
-const registerRouter = require("./routes/register");
-app.use("/register", registerRouter);
-
-const deleteAccountRouter = require("./routes/deleteAccount");
-app.use("/deleteAccount", deleteAccountRouter);
-
-const resetPasswordRouter = require("./routes/resetPassword");
-app.use("/resetPassword", resetPasswordRouter);
-
-const userRouter = require("./routes/user");
-app.use("/user", userRouter);
-
 const PORT = process.env.PORT || 3000;
 
 if(process.env.NODE_ENV !== "test") {
@@ -66,9 +47,34 @@ if(process.env.NODE_ENV !== "test") {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  app.use((req, res, next) => {
+    console.log(req.session);
+    console.log(req.user);
+    next();
+  });
+
   app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
   });
 }
+
+/*-------------- ROUTES --------------*/
+const apiRouter = require("./routes/api");
+app.use("/api", apiRouter);
+
+const loginRouter = require("./routes/login");
+app.use("/login", loginRouter);
+
+const registerRouter = require("./routes/register");
+app.use("/register", registerRouter);
+
+const deleteAccountRouter = require("./routes/deleteAccount");
+app.use("/deleteAccount", deleteAccountRouter);
+
+const resetPasswordRouter = require("./routes/resetPassword");
+app.use("/resetPassword", resetPasswordRouter);
+
+const userRouter = require("./routes/user");
+app.use("/user", userRouter);
 
 module.exports = app;
