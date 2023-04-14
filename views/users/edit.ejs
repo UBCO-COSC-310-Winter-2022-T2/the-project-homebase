@@ -12,30 +12,29 @@
     <section>
         <h1>Edit Your Profile</h1>
 
-        <form method="POST" action="user/edit/<%= user.id %>" enctype="multipart/form-data">
-            
+        <form method="POST" action="/user/edit/<%= user.id %>" enctype="multipart/form-data">            
             <div class="profile-picture">
-                <img src="../img" alt="Profile Picture">
+                <img src="/uploads/<%= user.avatar %>" alt="Profile Picture">
             </div>
 
             <div class="form-container">
                 <div class="form-field">
                     <label for="avatar">Profile Photo:</label>
-                    <input type="file" name="avatar" id="avatar">
+                    <input type="file" name="avatar" id="avatar" value= "<%= user.avatar %>" >
                 </div>
                 <div class="form-field">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" maxlength="30">
+                    <label for="username">Username:</label>
+                    <input value= "<%= user.username %>" type="text" name="username" id="username" maxlength="30">
                 </div>
                 <div class="form-field">
                     <label for="description">Description:</label>
-                    <textarea name="description" id="description" maxlength="200"></textarea>
+                    <textarea name="bio" id="bio" maxlength="200"><%= user.bio %></textarea>
                 </div>
             </div>
             
             <div class="button-container">
                 <input class="grid-buttons__button" type="submit" name="submit" value="Save Changes">
-                <a href="/home" class="grid-buttons__button">Cancel</a>
+                <a href="/" class="grid-buttons__button">Cancel</a>
             </div>
 
         </form>
@@ -45,8 +44,10 @@
             const submitButton = document.querySelector('input[type="submit"]');
 
             submitButton.addEventListener('click', (event) => {
-                const nameInput = document.querySelector('input[name="name"]');
-                const descriptionInput = document.querySelector('textarea[name="description"]');
+            const usernameInput = document.querySelector('#username');
+            const bioInput = document.querySelector('#bio');
+            const avatarInput = document.querySelector('#avatar');
+
             });
         </script>
     </section>
