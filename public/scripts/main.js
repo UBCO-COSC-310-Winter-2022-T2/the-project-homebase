@@ -53,10 +53,20 @@ chatForm.addEventListener("submit", (e) => {
 function outputMessage(message) {
   const div = document.createElement("div");
   div.classList.add("message");
-  div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
-    <p class="text">
-        ${message.text}
-    </p>`;
+  // check if message contains a link
+  if (message.text.includes("http://") || message.text.includes("https://")) {
+    // wrap link in anchor tag
+    const link = message.text.match(/(http[s]?:\/\/[^\s]+)/gi);
+    const text = message.text.replace(
+      link,
+      `<a href="${link}" target="_blank" class="message-link">${link}</a>`
+    );
+    div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
+      <p class="text">${text}</p>`;
+  } else {
+    div.innerHTML = `<p class="meta">${message.username} <span>${message.time}</span></p>
+      <p class="text">${message.text}</p>`;
+  }
   document.querySelector(".chat-messages").appendChild(div);
 }
 
