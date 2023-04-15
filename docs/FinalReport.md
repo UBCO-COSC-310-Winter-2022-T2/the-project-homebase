@@ -59,15 +59,26 @@ Video: https://www.youtube.com/watch?v=e4F-1zhNybU
 
     We found that a lot of the complexity in testing came from the vagueness of some of the implementation details of our modules. Because a lot of our components were developed in isolation from each other, it was sometimes difficult to determine which specific technology would be used for a given feature. This meant that we sometimes had to wait to see how the code was developing before actually writing some tests, which was counter to the test-driven development. Although this was only a problem in a couple of occasions, we think being more diligent in that part of the planning would have solved this.
 
-    For automation, we set up GitHub Actions to automatically apply our test suite to the code as it was merged into the repository.
+    For automation, we set up GitHub Actions to automatically apply our test suite to the code as it was merged into the repository. We also set up an automatic formatter as part of Actions, to keep the code consistent in its style.
 
 2. How did your branching workflow work for the team?  Were you successful in properly reviewing the code before merging as a team?
+
+    We felt this was one of the most successful aspects of the project. We were diligent in keeping features in the own branches as they developed, and were careful in reviewing each other's code as we pushed it to the repo. We found that some members of the team were more experienced with the technology stack we picked; this helped create a nice dynamic were we were able to provide quality feedback to each other and make sure the main branch was always secure. We found that the branching workflow helped each teammate work with more peace of mind, as we would not have to worry about new API keys or dependencies introduced by other people's code and could instead focus on working from a common place were things are tested.
+
 3. How would your project be deployed?  Is it docker ready and tested?  Provide a brief description of the level of dockerization you have implemented and what would be required to deploy.
+
+    Our project is not dockerized, but we think this process would not be too complex. We have a `MongoDB` database that could easily be deployed and scaled with a container, and our webapp's logic could be deployed in a docker container by changing our environment values. We would have liked to make the project containerized, but did not have time to do so.
 
 ## Reflections
 
 1. How did your project management work for the team?  What was the hardest thing and what would you do the same/differently the next time you plan to complete a project like this? 
+
+    In terms of project management, every member was responsible for updating their tasks in the GitHub projects as well as creating smaller issues as they came up. Although the board was occasionally updated by a designated member of the team after our weekly meeting, everyone was very much cooperative in keeping the board as up to date as possible. We found that the hardest part for the management of the project was the tracking of small issues and bugs in different branches of code. This was especially problematic as the stack became more complex, and we think we could have improved in this area.
+
 2. Do you feel that your initial requirements were sufficiently detailed for this project?  Which requirements did you miss or overlook?
+
+    We think we overlooked some requirements in terms of specific implementation details. We could have been more explicit in defining how exactly our app was going to work while setting the requirements. This would have made some of the task subdivision a little easier. Overall, however, we felt that we did a good job in capturing the needs of the application, and felt that the distribution of work for the project was fair as a result.
+
 3. What did you miss in your initial planning for the project (beyond just the requirements)?
 4. What process did you use (ie Scrum, Kanban..), how was it managed, and what was observed? 
 5. As a team, did you encounter issues with different team members developing with different IDEs?  In the future, would the team change anything in regard to the uniformity of development environments?
