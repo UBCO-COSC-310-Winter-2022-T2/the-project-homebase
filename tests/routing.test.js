@@ -2,10 +2,10 @@ const request = require("supertest");
 const app = require("../app.js");
 
 describe("GET /", () => {
-  it("should render index", async () => {
-    const response = await request(app).get("/");
-    expect(response.statusCode).toBe(200);
-  });
+    it("should render index", async () => {
+        const response = await request(app).get("/");
+        expect(response.statusCode).toBe(200);
+    });
 });
 
 // describe("GET /home", () => {
