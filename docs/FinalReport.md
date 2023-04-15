@@ -80,7 +80,21 @@ Video: https://www.youtube.com/watch?v=e4F-1zhNybU
     We think we overlooked some requirements in terms of specific implementation details. We could have been more explicit in defining how exactly our app was going to work while setting the requirements. This would have made some of the task subdivision a little easier. Overall, however, we felt that we did a good job in capturing the needs of the application, and felt that the distribution of work for the project was fair as a result.
 
 3. What did you miss in your initial planning for the project (beyond just the requirements)?
+
+    As mentioned previously, the learning curve of the project could have been helped by mentioning specifics of our implementation in our planning stage. If we had agreed on some of the technologies we were going to use for our features, we would have had an easier time of things. We could have invested some time into expanding some of our DFDs to better reflect the apps functionality.
+
 4. What process did you use (ie Scrum, Kanban..), how was it managed, and what was observed? 
+
+    We employed a Kanban process, in which the amount of tasks being worked on at once was kept manageable but constant throughout the project. We monitored these tasks in our GitHub projects board. We worked in weeklong sprints with deadlines centered around the milestones, and would have weekly meetings on the day of the milestone delivery. At this time we would sit together to reflect on our previous sprint and create the report. We found that this workflow helped make the project much less overwhelming, as tasks were always reasonable for the stage of the project, and we never felt like the work ahead was paralyzing.
+
 5. As a team, did you encounter issues with different team members developing with different IDEs?  In the future, would the team change anything in regard to the uniformity of development environments?
+
+    We did not have many issues related to this, but found that some issues did arise from the need to maintain environment variables the same across team members. We included an automatic formatter into our workflow to allow every member of the team to work on their code in their preferred style while keeping the codebase clean.  
+
 6. If you were to estimate the efforts required for this project again, what would you consider?  (Really I am asking the team to reflect on the difference between what you thought it would take to complete the project vs what it actually took to deliver it).   
+
+    We think that one aspect that we definitely did not forsee in this project was the overhead in learning the different technologies we used. The effort and time invested was much higher at the beginning of the project than after these first challenges were overcome. We had the impression that we could do much more with the time we had than when we ended up doing, but we think we kept our expectations manageable as the project went on.
+
 7. What did your team do that you feel is unique or something that the team is especially proud of (was there a big learning moment that the team had in terms of gaining knowledge of a new concept/process that was implemented).
+
+    We felt proud of the level of communication we kept throughout the project, and we had a great policy of honesty with each other. Most of us were unfamiliar with the tools we picked, but thanks to our pooling of resources in our Discord and the fact that all members were active and supportive, we were able to get through these initial difficulties. We think the level of support we afforded each other, and the level of cooperation we achieved, made the project very worthwhile in understanding how to coordinate a team and rely on each other.
