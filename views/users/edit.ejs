@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <script src="/scripts/index.js" defer></script>
+</head>
+<body>
+    <section>
+        <h1>Edit Your Profile</h1>
+
+        <form method="POST" action="/user/edit/<%= user.id %>" enctype="multipart/form-data">            
+            <div class="profile-picture">
+                <img src="/uploads/<%= user.avatar %>" alt="Profile Picture">
+            </div>
+
+            <div class="form-container">
+                <div class="form-field">
+                    <label for="avatar">Profile Photo:</label>
+                    <input type="file" name="avatar" id="avatar" value= "<%= user.avatar %>" >
+                </div>
+                <div class="form-field">
+                    <label for="username">Username:</label>
+                    <input value= "<%= user.username %>" type="text" name="username" id="username" maxlength="30">
+                </div>
+                <div class="form-field">
+                    <label for="description">Description:</label>
+                    <textarea name="bio" id="bio" maxlength="200"><%= user.bio %></textarea>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <input class="grid-buttons__button" type="submit" name="submit" value="Save Changes">
+                <a href="/" class="grid-buttons__button">Cancel</a>
+            </div>
+
+        </form>
+
+        <script>
+            const form = document.querySelector('form');
+            const submitButton = document.querySelector('input[type="submit"]');
+
+            submitButton.addEventListener('click', (event) => {
+            const usernameInput = document.querySelector('#username');
+            const bioInput = document.querySelector('#bio');
+            const avatarInput = document.querySelector('#avatar');
+
+            });
+        </script>
+    </section>
+
+</body>
+</html>
